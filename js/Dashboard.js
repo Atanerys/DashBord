@@ -49,14 +49,13 @@ export class Dashboard {
     this.persist();
   }
 
-  // порядок сохраняется как он есть на странице
+
   persist() {
     const order = [...this.container.children].map((c) => c.dataset.id).filter((id) => this.widgets.has(id));
     save(KEY, { widgets: order });
   }
 
-  // Перетаскивание за шапку карточки (мышь, палец, перо) через pointer events.
-  // Три обработчика на контейнере — не на каждой карточке, поэтому дублей нет.
+
   enableDrag() {
     const c = this.container;
     let drag = null;
@@ -78,7 +77,7 @@ export class Dashboard {
         .find((card) => card && card !== drag.card && card.parentElement === c);
       if (!target) return;
       const r = target.getBoundingClientRect();
-      // диагональ делит цель на «до» и «после» — работает и в строке, и в колонке
+      
       const after = (e.clientX - r.left) / r.width + (e.clientY - r.top) / r.height > 1;
       if (after) target.after(drag.card); else target.before(drag.card);
     });
