@@ -1,4 +1,4 @@
-// Плавно тянем «жёлтое» пятно за мышью — как в основном сайте.
+
 export function initGradient() {
   const el = document.querySelector('.interactive');
   if (!el) return;
