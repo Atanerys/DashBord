@@ -1,6 +1,6 @@
 import { RecipeWidget } from './RecipeWidget.js';
 
-// Тот же поиск и запросы, что у RecipeWidget, но показываем только видео.
+
 export class VideoWidget extends RecipeWidget {
   constructor(id) {
     super(id);
