@@ -38,7 +38,7 @@ export class UIComponent {
     return el;
   }
 
-  mount(body) {} // переопределяется в виджетах
+  mount(body) {} 
 
   makeBtn(text) {
     const b = document.createElement('button');
@@ -48,7 +48,7 @@ export class UIComponent {
     return b;
   }
 
-  // Все обработчики регистрируются тут, чтобы destroy() их снял.
+
   listen(target, type, fn) {
     target.addEventListener(type, fn);
     this.cleanups.push(() => target.removeEventListener(type, fn));
