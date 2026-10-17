@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кухня — дашборд</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Manrope:wght@400;500;700&family=Rubik:wght@500;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="pattern"></div>
+<div class="gradient-bg">
+  <div class="gradients-container">
+    <div class="g1"></div><div class="g2"></div><div class="g3"></div><div class="interactive"></div>
+  </div>
+</div>
+
+<!-- переиспользуемые фигуры -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="flower" viewBox="-50 -50 100 100"><g fill="currentColor">
+    <ellipse rx="13" ry="30" cy="-20"/><ellipse rx="13" ry="30" cy="-20" transform="rotate(45)"/>
+    <ellipse rx="13" ry="30" cy="-20" transform="rotate(90)"/><ellipse rx="13" ry="30" cy="-20" transform="rotate(135)"/>
+    <ellipse rx="13" ry="30" cy="-20" transform="rotate(180)"/><ellipse rx="13" ry="30" cy="-20" transform="rotate(225)"/>
+    <ellipse rx="13" ry="30" cy="-20" transform="rotate(270)"/><ellipse rx="13" ry="30" cy="-20" transform="rotate(315)"/></g></symbol>
+  <symbol id="spark" viewBox="-50 -50 100 100"><path fill="currentColor" d="M0-48C4-14 14-4 48 0 14 4 4 14 0 48-4 14-14 4-48 0-14-4-4-14 0-48z"/></symbol>
+</svg>
+<svg class="deco d1" aria-hidden="true"><use href="#flower"/></svg>
+<svg class="deco d2" aria-hidden="true"><use href="#spark"/></svg>
+<svg class="deco d3" aria-hidden="true"><use href="#flower"/></svg>
+
+<nav class="nav">
+  <a class="logo" href="#top">Моя<br>кухня</a>
+  <ul class="nav-links"><li><a href="#stats">Сегодня</a></li><li><a href="#tips">Как это работает</a></li><li><a href="#board">Виджеты</a></li></ul>
+  <button class="btn ghost theme-btn" id="theme-toggle" type="button" aria-pressed="false">Тема</button>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-text">
+    <h1>КУХНЯ<span class="script">всё под рукой</span></h1>
+    <p class="lead">Рецепты и видео, таймер, список продуктов и музыка — собери свою панель из карточек и готовь без суеты.</p>
+    <div class="toolbar" role="group" aria-label="Добавить виджет">
+      <button class="btn" data-add="recipe">+ Рецепт</button>
+      <button class="btn" data-add="video">+ Видеорецепт</button>
+      <button class="btn" data-add="timer">+ Таймер</button>
+      <button class="btn" data-add="shopping">+ Продукты</button>
+      <button class="btn" data-add="music">+ Музыка</button>
+    </div>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <div class="arch"></div><div class="sun"></div>
+    <svg class="burst" viewBox="-50 -50 100 100"><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+      <path d="M0-14V-44M0 14V44M-14 0H-44M14 0H44M10-10L31-31M-10 10L-31 31M10 10L31 31M-10-10L-31-31"/></g></svg>
+    <svg class="pan" viewBox="0 0 220 160"><rect x="150" y="68" width="68" height="16" rx="8" fill="#4a1d12"/>
+      <ellipse cx="90" cy="82" rx="86" ry="66" fill="#4a1d12"/><ellipse cx="90" cy="76" rx="70" ry="52" fill="#ffd9c2"/>
+      <ellipse cx="84" cy="74" rx="40" ry="32" fill="#fff"/><circle cx="84" cy="74" r="17" fill="#ffb36b"/></svg>
+    <svg class="sticker" viewBox="0 0 120 120"><defs><path id="ring" d="M60 60m-42 0a42 42 0 1 1 84 0a42 42 0 1 1-84 0"/></defs>
+      <circle cx="60" cy="60" r="58" fill="#fff7ec"/>
+      <text font-family="Rubik" font-weight="800" font-size="11.5" fill="#ff5a2c" letter-spacing="1.5"><textPath href="#ring">ГОТОВИМ · С ЛЮБОВЬЮ · ГОТОВИМ · С ЛЮБОВЬЮ ·</textPath></text>
+      <use href="#spark" x="40" y="40" width="40" height="40" color="#ff7aa8"/></svg>
+    <svg class="fl f1"><use href="#flower"/></svg><svg class="fl f2"><use href="#spark"/></svg>
+  </div>
+</header>
+
+<section class="stats" id="stats" aria-label="Сегодня на кухне">
+  <h2 class="sec-title pink">Сегодня на кухне</h2>
+  <div class="stat-grid">
+    <div class="stat s1"><b data-stat="widgets">0</b><span>виджетов<br>на панели</span></div>
+    <div class="stat s2"><b data-stat="items">0</b><span>продуктов<br>в списке</span></div>
+    <div class="stat s3"><b data-stat="minutes">10</b><span>минут<br>на таймере</span></div>
+    <div class="stat s4"><b>5</b><span>видов<br>карточек</span></div>
+  </div>
+</section>
+
+<section class="tips" id="tips" aria-label="Как это работает">
+  <h2 class="sec-title">Как это работает</h2>
+  <div class="tip-grid">
+    <article class="tip"><i>+</i><div><h3>Добавляйте</h3><p>Кнопки вверху создают рецепт, видео, таймер, список или радио.</p></div></article>
+    <article class="tip"><i>⠿</i><div><h3>Переставляйте</h3><p>Потяните карточку за заголовок — порядок запомнится.</p></div></article>
+    <article class="tip"><i>✦</i><div><h3>Не теряйте</h3><p>Продукты, время таймера и набор виджетов хранятся в браузере.</p></div></article>
+    <article class="tip"><i>–</i><div><h3>Сворачивайте</h3><p>Лишнюю карточку можно спрятать и вернуть одним нажатием.</p></div></article>
+  </div>
+</section>
+
+<section class="board" id="board">
+  <div class="board-head">
+    <h2>МОИ ВИДЖЕТЫ</h2>
+    <p class="hint" id="hint" role="status" aria-live="polite">Потяните карточку за заголовок, чтобы переставить.</p>
+  </div>
+  <main class="grid" id="grid"></main>
+</section>
+
+<footer class="foot">
+  <div class="foot-big">ПРИЯТНОГО<span class="script">аппетита!</span></div>
+  <p>Рецепты — TheMealDB · Радио — Radio Browser · Видео — YouTube</p>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+<script type="module" src="js/gradient.js"></script>
+</body>
+</html>
