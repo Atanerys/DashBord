@@ -20,7 +20,7 @@ document.querySelectorAll('[data-add]').forEach((b) =>
 );
 dash.restore();
 
-// Тема (тот же ключ и значения, что в портфолио)
+
 const root = document.documentElement;
 const themeBtn = document.getElementById('theme-toggle');
 let stored = null;
@@ -38,7 +38,7 @@ themeBtn.addEventListener('click', () => {
   try { localStorage.setItem('theme', next); } catch {}
 });
 
-// Живая статистика
+
 const grid = document.getElementById('grid');
 const stat = (k, v) => { const el = document.querySelector(`[data-stat=${k}]`); if (el) el.textContent = v; };
 function updateStats() {
